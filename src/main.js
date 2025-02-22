@@ -11,7 +11,7 @@ const waitMsg = document.querySelector(".wait-msg");
 
 
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   
   document.querySelector(".gallery").innerHTML = '';
@@ -32,7 +32,9 @@ form.addEventListener("submit", (e) => {
   return
   }
   waitMsg.innerHTML = '"Wait, the image is loaded" <span class="loader"></span>'
-  getImg(searchName)
+
+  await getImg(searchName)
+  
     .then(response => {
       if (response.data.hits.length == 0) {
         iziToast.show ({
