@@ -33,7 +33,7 @@ export function ShowGLR (arrPict){
             
     `).join("");
     
-    gallery.insertAdjacentHTML("afterbegin", markup);
+    gallery.insertAdjacentHTML("beforeend", markup);
 
    
     lightbox.refresh();
